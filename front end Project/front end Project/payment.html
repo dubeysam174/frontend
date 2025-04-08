@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Netflix Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .payment-container {
+            max-width: 440px;
+            margin: 60px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+        }
+
+        .payment-container h2 {
+            margin-bottom: 25px;
+            font-size: 26px;
+            color: #fff;
+        }
+
+        .plan {
+            background: #222;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plan h3 {
+            color: #e50914;
+            margin-bottom: 10px;
+        }
+
+        .plan select {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            margin-top: 8px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-top: 15px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+
+        .input-group input {
+            width: 90%;
+            padding: 12px 12px 12px 38px;
+            border: none;
+            border-radius: 6px;
+            background: #333;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .flex-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .flex-row select {
+            flex: 1;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .checkbox-group input {
+            margin-right: 8px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 25px;
+            font-size: 18px;
+            color: #fff;
+            background: #e50914;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #b20710;
+        }
+
+        @media screen and (max-width: 480px) {
+            .payment-container {
+                margin: 30px 15px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Complete Your Subscription</h2>
+
+        <div class="plan">
+            <h3>Choose Your Plan</h3>
+            <select required>
+                <option value="" disabled selected>Select a Plan</option>
+                <option>Basic - $8.99/month</option>
+                <option>Standard - $13.99/month</option>
+                <option>Premium - $17.99/month</option>
+            </select>
+        </div>
+
+        <form>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Cardholder Name" required />
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-credit-card"></i>
+                <input type="text" placeholder="Card Number" maxlength="16" required />
+            </div>
+
+            <div class="flex-row" style="margin-top: 15px;">
+                <select required>
+                    <option value="">Month</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+                <select required>
+                    <option value="">Year</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                    <option>2028</option>
+                </select>
+                <input type="text" placeholder="CVV" maxlength="4" style="flex: 0.8;" required />
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="saveCard">
+                <label for="saveCard">Save this card for future payments</label>
+            </div>
+
+            <button type="submit" class="btn">Pay Now</button>
+        </form>
+    </div>
+</body>
+</html>

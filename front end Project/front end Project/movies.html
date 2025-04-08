@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Netflix Clone - Movies</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: white;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: #000;
+      flex-wrap: wrap;
+    }
+
+    .header img {
+      width: 130px;
+    }
+
+    .right-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .search-container {
+      position: relative;
+    }
+
+    .search-bar {
+      background: #222;
+      padding: 10px 15px 10px 35px;
+      border-radius: 30px;
+      border: none;
+      color: white;
+      width: 250px;
+      transition: 0.3s;
+    }
+
+    .search-bar:focus {
+      outline: none;
+      background: #333;
+    }
+
+    .search-container i {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: #aaa;
+    }
+
+    .profile-icon {
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .profile-icon:hover {
+      color: #e50914;
+    }
+
+    .categories {
+      padding: 15px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: #0f0f0f;
+      border-top: 1px solid #222;
+    }
+
+    .categories button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .categories button:hover,
+    .categories button.active {
+      background: #e50914;
+      transform: scale(1.05);
+    }
+
+    .movie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+
+    .movie {
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .movie img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .movie:hover img {
+      transform: scale(1.1);
+    }
+
+    .movie-title {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .movie:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+    }
+
+    .overlay i {
+      font-size: 20px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      border-radius: 50%;
+      transition: background 0.2s;
+    }
+
+    .overlay i:hover {
+      background: #e50914;
+    }
+
+    @media (max-width: 600px) {
+      .search-bar {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .right-section {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .movie-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <center>
+    <img src="logo.png" alt="Netflix Logo">
+    </center>
+    <div class="right-section">
+      <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" class="search-bar" placeholder="Search movies...">
+      </div>
+      <div class="profile-icon" title="Profile">
+        <i class="fas fa-user-circle"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="categories">
+    <button class="active">All</button>
+    <button>Action</button>
+    <button>Comedy</button>
+    <button>Drama</button>
+    <button>Horror</button>
+    <button>Romance</button>
+  </div>
+
+  <div class="movie-container">
+    <div class="movie"><img src="movie1.jpeg" alt="Movie 1"><div class="movie-title">Movie 1</div></div>
+    <div class="movie"><img src="movie2.jpeg" alt="Movie 2"><div class="movie-title">Movie 2</div></div>
+    <div class="movie"><img src="movie3.jpeg" alt="Movie 3"><div class="movie-title">Movie 3</div></div>
+    <div class="movie"><img src="movie4.jpeg" alt="Movie 4"><div class="movie-title">Movie 4</div></div>
+    <div class="movie"><img src="movie5.jpeg" alt="Movie 5"><div class="movie-title">Movie 5</div></div>
+    <div class="movie"><img src="movie6.jpeg" alt="Movie 6"><div class="movie-title">Movie 6</div></div>
+    <div class="movie"><img src="movie7.jpeg" alt="Movie 7"><div class="movie-title">Movie 7</div></div>
+    <div class="movie"><img src="movie8.jpeg" alt="Movie 8"><div class="movie-title">Movie 8</div></div>
+    <div class="movie"><img src="movie9.jpeg" alt="Movie 9"><div class="movie-title">Movie 9</div></div>
+    <div class="movie"><img src="movie10.jpeg" alt="Movie 10"><div class="movie-title">Movie 10</div></div>
+    <div class="movie"><img src="movie11.jpeg" alt="Movie 11"><div class="movie-title">Movie 11</div></div>
+    <div class="movie"><img src="movie12.jpeg" alt="Movie 12"><div class="movie-title">Movie 12</div></div>
+    <div class="movie"><img src="movie13.jpeg" alt="Movie 13"><div class="movie-title">Movie 13</div></div>
+    <div class="movie"><img src="movie14.jpeg" alt="Movie 14"><div class="movie-title">Movie 14</div></div>
+    <div class="movie"><img src="movie15.jpeg" alt="Movie 15"><div class="movie-title">Movie 15</div></div>
+  
+  </div>
+  
+    </div>
+    <!-- Add more movies as needed -->
+  
+
+</body>
+</html>

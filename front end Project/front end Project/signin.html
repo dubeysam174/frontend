@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone - Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body { font-family: Arial, sans-serif;  color: white; background-image: url("sign.jpg"); }
+        .signin-container { max-width: 450px; margin: auto; padding: 60px 68px; background: rgba(0,0,0,0.75); border-radius: 5px; }
+        .signin-container h2 { margin-bottom: 20px; }
+        .form-control { background: #333; border: none; color: white; }
+        .form-control::placeholder { color: #bbb; }
+        .btn-danger { width: 100%; margin-top: 20px; }
+        .help-links { display: flex; justify-content: space-between; font-size: 0.9em; color: #aaa; }
+        .footer { text-align: center; padding: 20px; font-size: 0.9em; color: #aaa; }
+        .footer a { color: #aaa; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="text-center py-4">
+        <img src="logo.png" alt="Netflix Logo" width="150">
+    </header>
+    <div class="signin-container">
+        <h2>Sign In</h2>
+        <form>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Email or phone number" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-danger">Sign In</button>
+            <div class="help-links mt-3">
+                <div>
+                    <input type="checkbox" id="remember"> <label for="remember">Remember me</label>
+                </div>
+                <a href="#">Need help?</a>
+            </div>
+        </form>
+        <p class="mt-4">New to Netflix? <a href="signup.html">Sign up now</a>.</p>
+    </div>
+    <footer class="footer">
+        <p>Questions? Call 1-866-579-7172</p>
+        <div>
+            <a href="#">FAQ</a> | <a href="#">Help Center</a> | <a href="">Terms of Use</a>
+        </div>
+    </footer>
+</body>
+</html>

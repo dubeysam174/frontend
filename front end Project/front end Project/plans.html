@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Plans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header {
+            background: black;
+            padding: 20px;
+        }
+        .header img {
+            width: 150px;
+        }
+        .plans-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+        .plan {
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .plan:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .plan h2 {
+            color: red;
+        }
+        .plan ul {
+            list-style: none;
+            padding: 0;
+        }
+        .plan ul li {
+            padding: 10px;
+            border-bottom: 1px solid #444;
+        }
+        .plan button {
+            background: red;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .plan button:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Netflix Logo">
+    </div>
+    <h1>Choose Your Plan</h1>
+    <div class="plans-container">
+        <div class="plan">
+            <h2>Basic</h2>
+            <ul>
+                <li>Monthly Price: $8.99</li>
+                <li>HD Available: No</li>
+                <li>Ultra HD: No</li>
+                <li>Screens at the same time: 1</li>
+            </ul>
+            <button>Select Plan</button>
+        </div>
+        <div class="plan">
+            <h2>Standard</h2>
+            <ul>
+                <li>Monthly Price: $12.99</li>
+                <li>HD Available: Yes</li>
+                <li>Ultra HD: No</li>
+                <li>Screens at the same time: 2</li>
+            </ul>
+            <button>Select Plan</button>
+        </div>
+        <div class="plan">
+            <h2>Premium</h2>
+            <ul>
+                <li>Monthly Price: $15.99</li>
+                <li>HD Available: Yes</li>
+                <li>Ultra HD: Yes</li>
+                <li>Screens at the same time: 4</li>
+            </ul>
+            <button>Select Plan</button>
+        </div>
+    </div>
+</body>
+</html>
